@@ -1,0 +1,32 @@
+!Job
+target: !Target
+  head: c05158da8f91f4f313965e3f86a1c4c6690dc148
+  email: lisandrosnik@gmail.com
+  branch: cp313t-wheel-build
+  remote: https://github.com/lysnikolaou/arrow.git
+  github_repo: lysnikolaou/arrow
+  version: 18.0.0.dev353
+  r_version: 17.0.0.100000353
+  no_rc_version: 18.0.0.dev353
+  no_rc_r_version: 17.0.0.100000353
+  no_rc_semver_version: 18.0.0-dev353
+  no_rc_snapshot_version: 18.0.0-SNAPSHOT
+tasks:
+  wheel-macos-monterey-cp313-cp313t-arm64: !Task
+    name: wheel-macos-monterey-cp313-cp313t-arm64
+    ci: github
+    template: python-wheels/github.osx.yml
+    artifacts:
+    - pyarrow-18.0.0.dev353-cp313-cp313t-macosx_12_0_arm64.whl
+    params:
+      arch: arm64
+      arrow_jemalloc: OFF
+      python_version: '3.13'
+      python_abi_tag: cp313t
+      macos_deployment_target: '12.0'
+      runs_on: macos-14
+      vcpkg_arch: arm64
+    branch: build-0-github-wheel-macos-monterey-cp313-cp313t-arm64
+    commit: 51dad2e370979e0bc0be89af47ba4af8d4755422
+params: {}
+branch: build-0
