@@ -1,0 +1,29 @@
+!Job
+target: !Target
+  head: 78d8f9e1f3649a9769046917c54f8bf6df379f6f
+  email: lisandrosnik@gmail.com
+  branch: windows-free-threaded-wheels
+  remote: https://github.com/lysnikolaou/arrow.git
+  github_repo: lysnikolaou/arrow
+  version: 18.0.0.dev621
+  r_version: 18.0.0.100000621
+  no_rc_version: 18.0.0.dev621
+  no_rc_r_version: 18.0.0.100000621
+  no_rc_no_dev_version: 18.0.0
+  no_rc_semver_version: 18.0.0-dev621
+  no_rc_snapshot_version: 18.0.0-SNAPSHOT
+  so_version: '1800'
+tasks:
+  wheel-windows-cp313-cp313t-amd64: !Task
+    name: wheel-windows-cp313-cp313t-amd64
+    ci: github
+    template: python-wheels/github.windows.yml
+    artifacts:
+    - pyarrow-18.0.0.dev621-cp313-cp313t-win_amd64.whl
+    params:
+      python_version: '3.13'
+      python_abi_tag: cp313t
+    branch: build-15-github-wheel-windows-cp313-cp313t-amd64
+    commit: 7186062d00e08db6bb073c30444ed8560333b2c7
+params: {}
+branch: build-15
